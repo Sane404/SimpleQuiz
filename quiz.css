@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body{
+    width: 100%;
+    height: 100vh;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.question{
+    display: none;
+    
+}
+.question.current{
+    margin-top: 5px;
+    border:2px solid black;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    grid-template-areas: 'p p'
+                         'i1 l1'
+                         'i2 l2'
+                         'i3 l3'
+                         'i4 l4'
+                         'next next';
+}
+.question.current > *{
+    padding: 5px;
+    margin: 0;
+}
+.question.current >:nth-child(1){grid-area :p;border-bottom: 1px dashed #000;}
+.question.current >:nth-child(2){grid-area :i1;align-self: center;}
+.question.current >:nth-child(3){grid-area :l1;}
+.question.current >:nth-child(4){grid-area :i2;align-self: center;}
+.question.current >:nth-child(5){grid-area :l2;}
+.question.current >:nth-child(6){grid-area :i3;align-self: center;}
+.question.current >:nth-child(7){grid-area :l3;}
+.question.current >:nth-child(8){grid-area :i4;align-self: center;}
+.question.current >:nth-child(9){grid-area :l4;}
+.question.current >:nth-child(10){grid-area :next;width: 100px;background: dodgerblue;border: none;}
+.selected_correct + label,.correct + label{
+    background-color: rgb(127, 200, 127);
+}
+.selected + label{
+    background-color: rgb(248, 139, 139);
+}
+.output{
+    display:none;
+    width: 600px;
+    margin: 0 auto;
+}
+.start{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border:none;
+    background-color: dodgerblue;
+    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.results{
+    padding-top: 20px;
+    width: 600px;
+    margin: 0 auto;
+    
+}
+.res{display: grid;
+    margin-top: 5px;
+    border:2px solid black;
+    padding: 5px;
+    grid-gap:3px;
+    grid-template-columns: 20px 1fr;
+    grid-template-areas: 'p p'
+                         'i1 l1'
+                         'i2 l2'
+                         'i3 l3'
+                         'i4 l4';
+}
+.res > *{
+    padding: 5px;
+    margin: 0;
+}
+.res >:nth-child(1){grid-area :p;border-bottom: 1px dashed #000;}
+.res >:nth-child(2){grid-area :i1;align-self: center;}
+.res >:nth-child(3){grid-area :l1;}
+.res >:nth-child(4){grid-area :i2;align-self: center;}
+.res >:nth-child(5){grid-area :l2;}
+.res >:nth-child(6){grid-area :i3;align-self: center;}
+.res >:nth-child(7){grid-area :l3;}
+.res >:nth-child(8){grid-area :i4;align-self: center;}
+.res >:nth-child(9){grid-area :l4;}
+.progress_bar{
+    width: 600px;
+    margin: 0 auto;
+    height: 10px;
+    
+}
+.progress{
+    background-color: dodgerblue;
+    height: 100%;
+    width: 0px;
+    transition: width .5s;
+}
+.final{
+    text-align:center;
+    font-size: 20px;
+}
